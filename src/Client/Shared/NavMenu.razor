@@ -36,7 +36,25 @@
             }
         </MudNavGroup>
     }
-    @if (CanViewAdministrationGroup)
+    @* @if (_canViewCategories || _canViewNews)
+    { *@
+        <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="ml-4 my-3">@L["Articles"]</MudText>
+        <MudNavGroup Title="@L["Article"]" Expanded Icon="@Icons.Filled.AddBox">
+            @*  @if (_canViewCategories)
+            { *@
+                <MudNavLink Href="/catalog/products" Icon="@Icons.Filled.ShoppingBag" Class="fsh-nav-child">
+                    @L["Categories"]
+                </MudNavLink>
+            @* }
+            @if (_canViewNews)
+            { *@
+                <MudNavLink Href="/catalog/brands" Icon="@Icons.Filled.ShoppingBag" Class="fsh-nav-child">
+                    @L["News"]
+                </MudNavLink>
+            @* } *@
+        </MudNavGroup>
+@*     }
+ *@    @if (CanViewAdministrationGroup)
     {
         <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="ml-4 my-3">@L["Administration"]</MudText>
         @if (_canViewUsers)
